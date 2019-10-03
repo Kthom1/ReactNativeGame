@@ -8,9 +8,11 @@ import {
   Keyboard,
   Alert
 } from "react-native";
+import Colors from "../constants/Colors";
+import FontWeights from "../constants/FontWeights";
+import FontSizes from "../constants/FontSizes";
 import Card from "../components/Card";
 import Input from "../components/Input";
-import Colors from "../constants/Colors";
 import NumberContainer from "../components/NumberContainer";
 
 export default function StartGameScreen(props) {
@@ -43,9 +45,14 @@ export default function StartGameScreen(props) {
   if (confirmed) {
     confirmedOutput = (
       <Card style={styles.summaryContainer}>
-        <Text>You selected</Text>
+        <Text style={styles.sectionTitle}>You selected</Text>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button title="Start Game" />
+        <Button
+          title="Start Game"
+          onPress={() => {
+            props.startGame(selectedNumber);
+          }}
+        />
       </Card>
     );
   }
@@ -59,7 +66,7 @@ export default function StartGameScreen(props) {
       <View style={styles.screen}>
         <Text style={styles.startTitle}>Start a New Game</Text>
         <Card style={styles.inputContainer}>
-          <Text>Select a Number</Text>
+          <Text style={styles.sectionTitle}>Select a Number</Text>
           <Input
             style={styles.input}
             blurOnSubmit
@@ -99,13 +106,20 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   startTitle: {
-    fontSize: 20,
-    marginVertical: 10
+    fontSize: FontSizes.large,
+    fontWeight: FontWeights.medium,
+    marginTop: 50,
+    color: Colors.accent
+  },
+  sectionTitle: {
+    fontSize: FontSizes.large,
+    fontWeight: FontWeights.light
   },
   inputContainer: {
     width: 300,
     maxWidth: "80%",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 150
   },
   input: {
     width: 50,

@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
+import FontWeights from "../constants/FontWeights";
+import FontSizes from "../constants/FontSizes";
 
 export default function Header(props) {
   return (
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: "black",
-    fontSize: 18,
-    fontWeight: "bold"
+    fontSize: FontSizes.xlarge,
+    fontWeight: FontWeights.medium
   }
 });
