@@ -19,14 +19,20 @@ npm install -g expo-cli
 
   * You can read about configuring the Android emulator here:
   https://docs.expo.io/versions/latest/workflow/android-studio-emulator/
+  
+  
+3. In the project directory, run
 
+```
+yarn install
+```
 
-3. To start the application in an iOS simulator, in the project directory, run
+4. To start the application in an iOS simulator, in the project directory, run
 
 ```
 expo start --ios
 ```
-4. To start the application in an android simulator, in the project directory, run
+5. To start the application in an android simulator, in the project directory, run
 
 ```
 expo start --android
